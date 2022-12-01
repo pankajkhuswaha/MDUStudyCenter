@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/971a1df02f.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDU Study Center - HomePage</title>
+    <link rel="shortcut icon" href="../img/html/mdu logo.png" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat&family=PT+Sans&family=Smooch&family=Work+Sans:wght@200&display=swap');
+        /* FONT Families
+font-family: 'Lato', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'PT Sans', sans-serif;
+font-family: 'Smooch', cursive;
+font-family: 'Work Sans', sans-serif; */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --fontcolor: black;
+            --paracolor: rgb(131, 124, 124);
+            --navbg: wheat;
+            --ahover: rgb(255, 8, 0);
+            --abg: rgba(27, 27, 27, 0.178);
+            --aborder: white;
+            --sectionbg: #b5defc;
+            --btnbg: linear-gradient(40deg, #009cfff2, #e7ef07);
+            --shdow: 4px 4px 12px 0px black;
+            --cardbg: linear-gradient(144deg, #d062ab, #c7680d);
+            --spara: white;
+            --fcolor: #003f36;
+            --dpbg: wheat;
+            --bglimenu: gray;
+            --resulbg: #009872;
+        }
+
+        body {
+            background: url(../img/html/body\ img.jpg);
+            background-size: 100vw;
+            background-repeat: no-repeat;
+        }
+
+        h1,
+        h2,
+        h3,
+        h5,
+        h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* ======================================================
+          Global rules for tags and classes
+   ====================================================== */
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--fontcolor);
+            font-size: 1.3rem;
+            font-family: 'Lato', sans-serif;
+            font-weight: bold;
+        }
+
+        p {
+            color: var(--paracolor);
+        }
+
+        .btn {
+            padding: 10px;
+            font-size: 1em;
+            background: var(--btnbg);
+            border: 1px solid black;
+        }
+
+        .btn:hover {
+            box-shadow: var(--shdow);
+            transition: .6s ease;
+        }
+
+        /* ======================================================
+      End of Global rules for tags and classes
+   ====================================================== */
+        /* ======================================================
+      Starting the style of header
+   ====================================================== */
+        .header {
+            background-color: none;
+            box-sizing: border-box;
+        }
+
+        nav.navigation-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .mainlogo {
+            width: 11vw;
+
+        }
+
+        .navigation-option-menu {
+            display: flex;
+        }
+
+        .navigation-option-menu a {
+            border: 2px solid rgba(255, 0, 0, 0);
+            padding: 6px 10px;
+        }
+
+        .navigation-option-menu a:hover,
+        .navigation-option-menua:active {
+            color: var(--ahover);
+            border: 2px solid var(--aborder);
+            background: var(--abg);
+            border-radius: 6px 10px;
+            padding: 10px;
+            transition: .1s linear;
+        }
+
+        /* Bars */
+        .bars {
+            cursor: pointer;
+            display: none;
+            float: right;
+        }
+
+        .bar {
+            height: 3px;
+            width: 1.5rem;
+            margin: 5px;
+            background: #1e1c1c;
+        }
+
+        #bar-1 {
+            transform: rotate(90deg);
+        }
+
+        div#bar-2 {
+            margin: -7px 0px 6px 5px;
+        }
+
+        .bar2 {
+            width: 1rem;
+            height: 2px;
+        }
+
+        /* ======================================================
+     End the style of header
+   ====================================================== */
+        /* ======================================================
+      Starting the style of Main Section
+   ====================================================== */
+        /* reusable code of main section */
+        .elements-of-section {
+            width: 50%;
+        }
+
+        .main-section {
+            padding: 3vw 0px 2vw 0px;
+        }
+
+        /* End reusable code of main section */
+        section#mainsection-1 {
+            padding: 10px 0px 10px 12vw;
+        }
+
+        section#mainsection-2 {
+            padding: 0px 2vw 0px 6vw;
+        }
+
+        .mainimg {
+            width: 34vw;
+        }
+
+        .main-section {
+            display: flex;
+            align-items: center;
+            background-color: var(--sectionbg);
+            width: 100%;
+        }
+
+        .main-section-btn {
+            margin: 15px 0px 5px 0px;
+        }
+
+        h1.front-para {
+            margin-bottom: 3px;
+            font-size: 2em;
+        }
+
+        h3.f-para {
+            font-size: 1rem;
+            color: blue;
+        }
+
+        /* Starting of typing animation in main section*/
+        @keyframes typing {
+
+            /* from {left: 27vw;}to {left: 27vw;left: 12vw;} */
+            0% {
+                left: 12vw;
+            }
+
+            25% {}
+
+            50% {
+                left: 27vw;
+            }
+
+            75% {}
+
+            100% {
+                left: 12vw;
+            }
+        }
+
+        @keyframes typing2 {
+
+            /* from {left: 27vw;}to {left: 27vw;left: 12vw;} */
+            0% {
+                left: 12vw;
+            }
+
+            25% {}
+
+            50% {
+                left: 20vw;
+            }
+
+            75% {}
+
+            100% {
+                left: 12vw;
+            }
+        }
+
+
+        .s-1::after,
+        .s-2::after,
+        .s-3::after {
+            content: "";
+            position: absolute;
+            width: 19vw;
+            height: 38px;
+            border: 2px solid var(--sectionbg);
+            background: var(--sectionbg);
+            /* animation: typing 4s ease 0s infinite; */
+            border-left: 2px solid blue;
+        }
+
+        .s-2::after {
+            animation: typing 4s ease 0s infinite;
+        }
+
+        .s-3::after {
+            width: 10vw;
+            animation: typing2 4s ease 4s infinite;
+        }
+
+        .fp-res {
+            display: none;
+        }
+
+        /* ======================================================
+    End of style of Main Section
+   ====================================================== */
+        /* ======================================================
+      Starting the style of Question papr Section
+   ====================================================== */
+        .question-papers {
+            padding: 4vw 9vw;
+            background: var(--navbg);
+        }
+
+        .course-cards {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .course-card {
+            width: 225px;
+            height: 300px;
+            margin: 10px;
+            min-width: 225px;
+            display: flex;
+            background: var(--cardbg);
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            transition: .5s ease;
+            border-radius: 34% 66% 35% 65% / 98% 0% 100% 2%;
+            cursor: pointer;
+        }
+
+        .course-card:hover {
+            box-shadow: var(--shdow);
+        }
+
+        img.c-img {
+            border-radius: 65px;
+            width: 135px;
+            height: 125px;
+            border: 2px solid white;
+        }
+
+        h2.cars-heading {
+            padding-top: 10px;
+        }
+
+        p.card-para {
+            color: var(--spara);
+            text-align: center;
+            padding: 10px;
+        }
+
+        .main-qp-line {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .main-qp-line::before {
+            content: "";
+            position: absolute;
+            background: #2117f0;
+            width: 20rem;
+            height: 3px;
+            margin: -16px 10px;
+        }
+
+        .main-qp-line::after {
+            content: "";
+            position: absolute;
+            background: #003f36;
+            width: 24px;
+            height: 23px;
+            border-radius: 28px;
+            margin: 0px 19rem -27px 0px;
+        }
+
+        /* ======================================================
+     End the style of Question papr Section
+   ====================================================== */
+        /* ======================================================
+      Starting the style of Footer
+   ====================================================== */
+        footer {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            background: var(--fcolor);
+            padding: 3vw 9vw;
+        }
+
+        .columns {
+            width: 16rem;
+            min-width: 14rem;
+            margin: 4px;
+        }
+
+        p.column-1-para {
+            padding-top: 42px;
+        }
+
+        h3.column-heading {
+            color: white;
+            padding-bottom: 2rem;
+            font-size: 1.4rem;
+        }
+
+        .column-para {
+            margin: 14px;
+            border-bottom: 2px dotted grey;
+            padding: 5px;
+        }
+
+        a.col-a {
+            margin-bottom: 113px;
+            font-size: 1.2rem;
+        }
+
+        .fa-brands {
+            font-size: 3rem;
+            color: wheat;
+            border: 2px solid white;
+            border-radius: 37px;
+            padding: 6px;
+            margin: 4px;
+        }
+
+        .fa-envelope {
+            color: wheat;
+        }
+
+        .fa-facebook:hover {
+            color: rgba(0, 0, 255, 0.658);
+        }
+
+        .fa-twitter:hover {
+            color: rgba(0, 195, 255, 0.658);
+        }
+
+        .fa-instagram:hover {
+            color: rgba(255, 0, 234, 0.658);
+        }
+
+        .fa-github:hover {
+            color: rgba(255, 187, 0, 0.658);
+        }
+
+        .fa-reddit:hover {
+            color: rgba(255, 51, 0, 0.658);
+        }
+
+        .fa-whatsapp:hover {
+            color: rgba(0, 255, 64, 0.658);
+        }
+
+        /* ======================================================
+     Ending of  the style of Footer
+   ====================================================== */
+        /* ======================================================
+      Starting the style of Navigation dropdown
+   ====================================================== */
+        /* starting of reusable code */
+        ul.qp-option {
+            position: absolute;
+            /* border: 1px solid black; */
+            background: var(--dpbg);
+        }
+
+        .qp-menu-opt {
+            display: none;
+            text-align: center;
+            font-size: 1.2rem;
+            color: rgb(0, 0, 0);
+            transition: 0.3s linear;
+            border-bottom: 2px solid rgba(0, 0, 0, 0);
+            cursor: pointer;
+        }
+
+        .qp-menu-opt:hover {
+            color: #ffeeee;
+            background: rgb(199 165 100);
+            text-shadow: 0 0 black;
+            box-shadow: var(--shdow);
+            border-bottom: 2px solid black;
+        }
+
+        /*   End of reusable code */
+        li.qp-menu-opt {
+            padding: 10px 1.6rem 10px 1.6rem;
+        }
+
+        .qp-main {
+            margin: 8px 0px 0px 3rem;
+        }
+
+        .sem-option {
+            margin: -34px 3px 0px 70px;
+            width: 130px;
+            height: 41vh;
+            display: none;
+            border: 2px solid salmon;
+        }
+
+        .sem-option:hover {
+            background: #c8e195;
+        }
+
+        .qp-menu-opt:hover .sem-option {
+            display: block;
+        }
+
+        .menu-qeustion:hover .qp-menu-opt {
+            display: block;
+        }
+
+        i.fa-solid.fa-plus {
+            display: none;
+        }
+
+        @media screen and (max-width: 720px) {
+
+            /* ======================================================
+  Starting the style of header for responsive
+====================================================== */
+            ul.navigation-option-menu {
+                display: none;
+                background: var(--resulbg);
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            li.menu-option {
+                margin: 2rem 0px 0rem 0px;
+                width: 100%;
+                padding: 12px 26px;
+                transition: 1s ease;
+            }
+
+            li.menu-option:hover {
+                background: gray;
+                box-shadow: var(--shdow);
+            }
+
+            .grid-navbar {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                align-items: center;
+            }
+
+            .imgdiv {
+                width: 50vw;
+                padding: 0px 0px 0px 12vw;
+            }
+
+            .mainlogo {
+                width: 26vw;
+            }
+
+            .sbar {
+                display: block;
+            }
+
+            .buttons-with-question {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            #sub-menu-hide {
+                display: none;
+            }
+
+            div#firtclick,
+            #cross {
+                margin: 0px 0px 0px 34vw;
+            }
+
+            ul.qp-main {
+                position: relative;
+                width: 97vw;
+                margin: 10px 0px 0px -20px;
+                display: none;
+            }
+
+            .qp-menu-opt {
+                display: block;
+                position: relative;
+                text-align: left;
+
+            }
+
+            li.qp-menu-opt {
+                padding: 10px 1.6rem 10px 5.6rem;
+            }
+
+            .menu-qeustion:hover .qp-menu-opt {
+                display: block;
+            }
+
+            ul.qp-option.sem-option {
+                display: none;
+                position: relative;
+                margin: 8px;
+                width: 50vw;
+                text-align: center;
+                background: transparent;
+                border: none;
+            }
+
+            .fp-res {
+                display: none;
+            }
+
+            .s-1::after,
+            .s-2::after,
+            .s-3::after {
+                animation: none;
+                width: 0px;
+                height: 0px;
+                border: 2px solid var(--sectionbg);
+                background: var(--sectionbg);
+                /* animation: typing 4s ease 0s infinite; */
+                border-left: none;
+            }
+
+            /* ======================================================
+  End the style of header for responsive
+====================================================== */
+        }
+
+        @media screen and (min-width:721px) and (max-width:200000px) {
+            .bar2 {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width:721px) and (max-width:1300px) {
+            .nav-ul {
+                display: flex;
+            }
+
+            .bar2 {
+                display: none;
+            }
+
+            .firtclick {
+                display: none;
+            }
+
+            .s-1::after,
+            .s-2::after,
+            .s-3::after {
+                animation: none;
+                width: 0px;
+                height: 0px;
+                border: 2px solid var(--sectionbg);
+                background: var(--sectionbg);
+                /* animation: typing 4s ease 0s infinite; */
+                border-left: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navigation-option">
+            <div class="grid-navbar">
+                <div class="imgdiv"><img class="mainlogo " src="../img/html/logo.png" alt="../img/html/logo.png"></div>
+
+                <div class="bars sbar" id="firtclick" onclick="show();">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <div class="bars" id="cross" onclick="hide();">
+                    <div class="bar bar2" id="bar-1"></div>
+                    <div class="bar bar2" id="bar-2"></div>
+                </div>
+            </div>
+            <ul class="navigation-option-menu" id="nav-ul">
+                <li class="menu-option"><a href="#" class="menu-opt-link">Home</a></li>
+                <li class="menu-option menu-qeustion">
+                    <div class="buttons-with-question">
+                        <a href="#" class="menu-opt-link">Question Papers&nbsp;
+                            <i class="fa-solid fa-angle-down"></i>
+                        </a>
+                        <div class="bars sbar" id="sub-menu-show" onclick="menushow();">
+                            <div class="bar bar2" id="bar-1"></div>
+                            <div class="bar bar2" id="bar-2"></div>
+                        </div>
+                        <div class="bar bar2" id="sub-menu-hide" onclick="menuhide();"></div>
+                    </div>
+                    <ul id="drp-dwn-menu-res" class="qp-option qp-main">
+                        <li class="qp-menu-opt">BCA
+                            <ul class="qp-option sem-option">
+                                <li class="sem-dp qp-menu-opt">1st Sem.</li>
+                                <li class="sem-dp qp-menu-opt">2nd Sem.</li>
+                                <li class="sem-dp qp-menu-opt">3rd Sem.</li>
+                                <li class="sem-dp qp-menu-opt">4th Sem.</li>
+                                <li class="sem-dp qp-menu-opt">5th Sem.</li>
+                                <li class="sem-dp qp-menu-opt">6th Sem.</li>
+                            </ul>
+                        </li>
+                        <li class="qp-menu-opt">MCA
+                            <ul class="qp-option sem-option">
+                                <li class="sem-dp qp-menu-opt">1st Sem.</li>
+                                <li class="sem-dp qp-menu-opt">2nd Sem.</li>
+                                <li class="sem-dp qp-menu-opt">3rd Sem.</li>
+                                <li class="sem-dp qp-menu-opt">4th Sem.</li>
+                                <li class="sem-dp qp-menu-opt">5th Sem.</li>
+                                <li class="sem-dp qp-menu-opt">6th Sem.</li>
+                            </ul>
+                        </li>
+                        <li class="qp-menu-opt">BA
+                            <ul class="qp-option sem-option">
+                                <li class="sem-dp qp-menu-opt">1st Sem.</li>
+                                <li class="sem-dp qp-menu-opt">2nd Sem.</li>
+                                <li class="sem-dp qp-menu-opt">3rd Sem.</li>
+                                <li class="sem-dp qp-menu-opt">4th Sem.</li>
+                                <li class="sem-dp qp-menu-opt">5th Sem.</li>
+                                <li class="sem-dp qp-menu-opt">6th Sem.</li>
+                            </ul>
+                        </li>
+                        <li class="qp-menu-opt">MA
+                            <ul class="qp-option sem-option">
+                                <li class="sem-dp qp-menu-opt">1st Sem.</li>
+                                <li class="sem-dp qp-menu-opt">2nd Sem.</li>
+                                <li class="sem-dp qp-menu-opt">3rd Sem.</li>
+                                <li class="sem-dp qp-menu-opt">4th Sem.</li>
+                                <li class="sem-dp qp-menu-opt">5th Sem.</li>
+                                <li class="sem-dp qp-menu-opt">6th Sem.</li>
+                            </ul>
+                        </li>
+                        <li class="qp-menu-opt">B.Sc
+                            <ul class="qp-option sem-option">
+                                <li class="sem-dp qp-menu-opt">1st Sem.</li>
+                                <li class="sem-dp qp-menu-opt">2nd Sem.</li>
+                                <li class="sem-dp qp-menu-opt">3rd Sem.</li>
+                                <li class="sem-dp qp-menu-opt">4th Sem.</li>
+                                <li class="sem-dp qp-menu-opt">5th Sem.</li>
+                                <li class="sem-dp qp-menu-opt">6th Sem.</li>
+                            </ul>
+                        </li>
+                        <li class="qp-menu-opt">M.Sc
+                            <ul class="qp-option sem-option">
+                                <li class="sem-dp qp-menu-opt">1st Sem.</li>
+                                <li class="sem-dp qp-menu-opt">2nd Sem.</li>
+                                <li class="sem-dp qp-menu-opt">3rd Sem.</li>
+                                <li class="sem-dp qp-menu-opt">4th Sem.</li>
+                                <li class="sem-dp qp-menu-opt">5th Sem.</li>
+                                <li class="sem-dp qp-menu-opt">6th Sem.</li>
+                            </ul>
+                        </li>
+                        <li class="qp-menu-opt">B.Com
+                            <ul class="qp-option sem-option">
+                                <li class="sem-dp qp-menu-opt">1st Sem.</li>
+                                <li class="sem-dp qp-menu-opt">2nd Sem.</li>
+                                <li class="sem-dp qp-menu-opt">3rd Sem.</li>
+                                <li class="sem-dp qp-menu-opt">4th Sem.</li>
+                                <li class="sem-dp qp-menu-opt">5th Sem.</li>
+                                <li class="sem-dp qp-menu-opt">6th Sem.</li>
+                            </ul>
+                        </li>
+                        <li class="qp-menu-opt">M.Com
+                            <ul class="qp-option sem-option">
+                                <li class="sem-dp qp-menu-opt">1st Sem.</li>
+                                <li class="sem-dp qp-menu-opt">2nd Sem.</li>
+                                <li class="sem-dp qp-menu-opt">3rd Sem.</li>
+                                <li class="sem-dp qp-menu-opt">4th Sem.</li>
+                                <li class="sem-dp qp-menu-opt">5th Sem.</li>
+                                <li class="sem-dp qp-menu-opt">6th Sem.</li>
+                            </ul>
+                        </li>
+                        <li class="qp-menu-opt">BBA
+                            <ul class="qp-option sem-option">
+                                <li class="sem-dp qp-menu-opt">1st Sem.</li>
+                                <li class="sem-dp qp-menu-opt">2nd Sem.</li>
+                                <li class="sem-dp qp-menu-opt">3rd Sem.</li>
+                                <li class="sem-dp qp-menu-opt">4th Sem.</li>
+                                <li class="sem-dp qp-menu-opt">5th Sem.</li>
+                                <li class="sem-dp qp-menu-opt">6th Sem.</li>
+                            </ul>
+                        </li>
+                        <li class="qp-menu-opt">Diploma
+                            <ul class="qp-option sem-option">
+                                <li class="sem-dp qp-menu-opt">1st Sem.</li>
+                                <li class="sem-dp qp-menu-opt">2nd Sem.</li>
+                                <li class="sem-dp qp-menu-opt">3rd Sem.</li>
+                                <li class="sem-dp qp-menu-opt">4th Sem.</li>
+                                <li class="sem-dp qp-menu-opt">5th Sem.</li>
+                                <li class="sem-dp qp-menu-opt">6th Sem.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-option"><a href="#" class="menu-opt-link">About us</a></li>
+                <li class="menu-option"><a href="#" class="menu-opt-link">Donate</a></li>
+                <li class="menu-option"><a href="#" class="menu-opt-link">Contact us</a></li>
+            </ul>
+
+        </nav>
+    </header>
+    <main class="main-section">
+        <section class="elements-of-section" id="mainsection-1">
+            <h3 class="f-para">Welcome To</h3>
+            <h1 class="front-para">
+                <span class="s-2">MDU Study</span> <br> <span class="s-3">Center</span>
+            </h1>
+            <p class="main-para">
+                Welcome to MDU study center, where you find notes,previous years question paper,and all kind of mdu's
+                Study material is available here.
+                You can Boost your scroes in your Semester exam with us.
+                SO Explore the journery of being a Smart student.
+            </p>
+            <button class="main-section-btn btn">Explore</button>
+        </section>
+        <section class="elements-of-section" id="mainsection-2">
+            <img src="../img/html/main.png" alt="" class="mainimg">
+        </section>
+    </main>
+    <section class="question-papers">
+        <h1 class="main-qp-line">
+            Available Question Papers
+        </h1>
+        <!-- <div class="main-line" contenteditable="true">Available Question paper</div> -->
+        <div class="course-cards">
+            <div class="course-card" id="card-1">
+                <img src="../img/html/bca.png" alt="" class="c-img">
+                <h2 class="cars-heading">BCA</h2>
+                <p class="card-para">Bachelors of Computer <br> Application</p>
+                <button class="card-btn btn">View</button>
+            </div>
+            <div class="course-card" id="card-2">
+                <img src="../img/html/MA.jpg" alt="" class="c-img">
+                <h2 class="cars-heading">MA</h2>
+                <p class="card-para">Masters in Arts</p>
+                <button class="card-btn btn">View</button>
+            </div>
+            <div class="course-card" id="card-3">
+                <img src="../img/html/ba.png" alt="" class="c-img">
+                <h2 class="cars-heading">BA</h2>
+                <p class="card-para">Bachelors in Art</p>
+                <button class="card-btn btn">View</button>
+            </div>
+            <div class="course-card" id="card-4">
+                <img src="../img/html/bcom.jpg" alt="" class="c-img">
+                <h2 class="cars-heading">B.Com.</h2>
+                <p class="card-para">Bachelors of Commerse</p>
+                <button class="card-btn btn">View</button>
+            </div>
+            <div class="course-card" id="card-5">
+                <img src="../img/html/bsc.jpg" alt="" class="c-img">
+                <h2 class="cars-heading">B.Sc.</h2>
+                <p class="card-para">Bachelors of science</p>
+                <button class="card-btn btn">View</button>
+            </div>
+            <div class="course-card" id="card-6">
+                <img src="../img/html/B.Tech_.png" alt="" class="c-img">
+                <h2 class="cars-heading">B.Tech.</h2>
+                <p class="card-para">Bachelors of Technology</p>
+                <button class="card-btn btn">View</button>
+            </div>
+            <div class="course-card" id="card-7">
+                <img src="../img/html/msc.jpg" alt="" class="c-img">
+                <h2 class="cars-heading">M.Sc.</h2>
+                <p class="card-para">Masters of science</p>
+                <button class="card-btn btn">View</button>
+            </div>
+            <div class="course-card" id="card-8">
+                <img src="../img/html/Mcom.jpg" alt="" class="c-img">
+                <h2 class="cars-heading">M.Com.</h2>
+                <p class="card-para">Masters of Commerce</p>
+                <button class="card-btn btn">View</button>
+            </div>
+            <div class="course-card" id="card-9">
+                <img src="../img/html/diploma.jpg" alt="" class="c-img">
+                <h2 class="cars-heading">Diploma</h2>
+                <p class="card-para">Diploma in different stream</p>
+                <button class="card-btn btn">View</button>
+            </div>
+            <div class="course-card" id="card-10">
+                <img src="../img/html/diploma.jpg" alt="" class="c-img">
+                <h2 class="cars-heading">MCA</h2>
+                <p class="card-para">Master's in Computer <br> Apllication</p>
+                <button class="card-btn btn">View</button>
+            </div>
+
+        </div>
+    </section>
+    <footer>
+        <div class="columns" id="coloumn-1">
+            <img src="../img/html/logo.png" alt="" class="mainlogo">
+            <p class="column-1-para">
+                MDU Study center is founded by a mad engineers in 2022, who had the dream of
+                digitalizing study material for Maharishi Dayanand University students.
+                Started from Maharishi Dayanand University, Regular course, we aim to add all universities of India.
+            </p>
+        </div>
+        <div class="columns" id="coloumn-2">
+            <h3 class="column-heading">Other Links</h3>
+            <p class="column-para"><a href="" class="col-a">Contact Us</a></p>
+            <p class="column-para"><a href="" class="col-a">About us</a></p>
+            <p class="column-para"><a href="" class="col-a">Contributors</a></p>
+            <p class="column-para"><a href="" class="col-a">Career with me</a></p>
+
+        </div>
+        <div class="columns" id="coloumn-3">
+            <h3 class="column-heading">Important links</h3>
+            <p class="column-para"><a href="" class="col-a">Upload</a></p>
+            <p class="column-para"><a href="" class="col-a">Datsheets</a></p>
+            <p class="column-para"><a href="" class="col-a">Institution's List</a></p>
+            <p class="column-para"><a href="" class="col-a">Syllabs</a></p>
+        </div>
+        <div class="columns" id="coloumn-4">
+            <h3 class="column-heading">Contact us</h3>
+            <p class="column-para"><a href="" class="col-a"> <i class="fa-regular fa-envelope"></i>
+                    help@mdustdycenter</a></p>
+            <div class="social-icons">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-github"></i>
+                <i class="fa-brands fa-reddit"></i>
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+        </div>
+    </footer>
+    <script>
+        var a = document.getElementById("firtclick");
+        var b = document.getElementById("nav-ul");
+        var c = document.getElementById("cross");
+        var d = document.getElementById("drp-dwn-menu-res");
+        var e = document.getElementById("sub-menu-show");
+        var f = document.getElementById("sub-menu-hide");
+        function show() {
+            a.style.display = "none";
+            b.style.display = "flex";
+            c.style.display = "block";
+
+        }
+        function hide() {
+            a.style.display = "block";
+            b.style.display = "none";
+            c.style.display = "none";
+        }
+        function menushow() {
+            d.style.display = "block";
+            e.style.display = "none";
+            f.style.display = "block";
+
+        }
+        function menuhide() {
+            d.style.display = "none";
+            e.style.display = "block";
+            f.style.display = "none";
+
+        }
+        window.addEventListener("resize", () => {
+            if (document.body.clientWidth > 720) {
+                console.log("HEllo Desktop")
+                document.getElementById("nav-ul").style.display = "flex";
+                document.getElementById("firtclick").style.display = "none";
+            }
+            else {
+                document.getElementById("nav-ul").style.display = "none";
+                document.getElementById("firtclick").style.display = "block";
+                document.getElementById("cross").style.display = "none";
+            }
+        });
+//   window.addEventListener("resize",() =>{
+//     if(document.body.clientWidth < 720){
+//     document.getElementById("nav-ul").style.display = "none";
+//     document.getElementById("firtclick").style.display = "block";
+//     document.getElementById("cross").style.display = "none";
+//     }
+//   });
+
+
+
+
+    </script>
+</body>
+
+</html>
